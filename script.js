@@ -1,10 +1,13 @@
+var edunp_data_url = 'https://api.airtable.com/v0/appjToE5jzbSVq4c5/shopes?api_key=key5nqFTKwryMb86C';
+
 var edunpHTML = '';
 var edunpDiv = $('.Agency');
 var renderedunpData = function(data) {
  data.records.forEach(function(program) {
    edunpHTML += '<h2>' + program.fields['shop name'] + '</h2>';
    edunpHTML += '<h2>' + program.fields['location'] + '</h2>';
-   edunpHTML += '<p>' + program.fields['Description'] + '</p>';
+   edunpHTML += '<h2>' + program.fields['contact info'] + '</h2>';
+   edunpHTML += program.fields['work'];
    if (program.fields['Email']) {
      edunpHTML += '<p>' + program.fields['Email'] + '</p>';
    };
