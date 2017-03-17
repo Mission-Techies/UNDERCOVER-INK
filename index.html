@@ -20,7 +20,21 @@
   <img class="img-responsive" src="http://brand.bmw-motorrad.com/en/stories/people/makani-terror/_jcr_content/parsys/twocolumns/leftcol/singleimage.img.wide.large.jpg/1468586238720.jpg" alt="photo"/>
 
 <!--end of jumbotron code -->
+<div id="video-preloader" class="video-preloader">
+    <video id="editor-video-preloader" width=350 height=350 poster="http://editorassets.parastorage.com/image/editor-video-preloader-poster-white-2x2.gif" loop autoplay></video>
+    <script>
+        // editor assets serving domain
+        var videoUrl = "http://editorassets.parastorage.com/" + "video-preloader/";
+        var videoName = "editor-video-preloader-" + Math.floor((Math.random() * 5) + 1);
+        var videoElement = document.getElementById('editor-video-preloader');
+        var devicePixelRatio = window.devicePixelRatio || window.screen.deviceXDPI / window.screen.logicalXDPI;
+        var vidContainer = videoElement.canPlayType('video/mp4; codecs="avc1.4D401E, mp4a.40.2"') != "probably" ? ".webm": ".mp4";
+        var retinaSuffix = devicePixelRatio >= 2 ? "-@2x" : "";
 
+        videoElement.src = videoUrl + videoName + retinaSuffix + vidContainer;
+        videoElement.load();
+    </script>
+</div>
 
   <p></p>
      <div class="Agency"></div>
